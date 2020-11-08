@@ -107,6 +107,8 @@ const truncate = (text, limit, ellipsis) => {
       skipCountIncrement = false;
     }
 
+    outputText = outputText.trimEnd()
+
     while (formatStack.length > 0) {
       outputText += formatStack.pop();
     }

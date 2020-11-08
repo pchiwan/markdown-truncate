@@ -1,6 +1,6 @@
 {
   "name": "markdown-truncate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A zero-dependency, vanilla JavaScript utility to truncate markdown text.",
   "main": "lib/index.js",
   "scripts": {

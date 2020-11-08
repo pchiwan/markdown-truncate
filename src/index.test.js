@@ -45,8 +45,13 @@ describe('truncateMarkdown test suite', () => {
       { limit: 20, ellipsis: true },
     ],
     [
+      'truncation trims **trailing     spaces**',
+      'truncation trims **trailing**...',
+      { limit: 25, ellipsis: true },
+    ],
+    [
       'a [hyperlink is also truncated](https://google.com) including the link',
-      'a [hyperlink is ](https://google.com)...',
+      'a [hyperlink is](https://google.com)...',
       { limit: 15, ellipsis: true },
     ],
     ['this www.google.com is also properly truncated', 'this www.goo...', { limit: 12, ellipsis: true }],
