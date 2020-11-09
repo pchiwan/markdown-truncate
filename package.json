@@ -1,17 +1,28 @@
 {
   "name": "markdown-truncate",
-  "version": "1.0.3",
+  "version": "0.0.0-development",
   "description": "A zero-dependency, vanilla JavaScript utility to truncate markdown text.",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "build": "esbuild ./src/index.js --minify --outfile=lib/index.js"
+    "build": "esbuild ./src/index.js --minify --outfile=lib/index.js",
+    "semantic-release": "semantic-release"
   },
   "author": "Sílvia Mur Blanch <pchiwan@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "esbuild": "^0.8.5",
     "jest": "^26.6.3",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "semantic-release": "^17.2.2"
+  },
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/github"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pchiwan/markdown-truncate.git"
   }
 }
