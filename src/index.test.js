@@ -54,6 +54,11 @@ describe('truncateMarkdown test suite', () => {
       'a [hyperlink is](https://google.com)...',
       { limit: 15, ellipsis: true },
     ],
+    [
+      'in hyperlinks [only the label counts towards](https://google.com) the truncation limit',
+      'in hyperlinks [only the label counts towards](https://google.com) the truncation limit',
+      { limit: 70, ellipsis: true },
+    ],
     ['this www.google.com is also properly truncated', 'this www.goo...', { limit: 12, ellipsis: true }],
     [
       '"quotes" and other special <characters> remain unchanged',

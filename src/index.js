@@ -92,6 +92,7 @@ const truncate = (text, limit, ellipsis) => {
 
         outputText += `[${truncateString(hyperlinkText)}](${hyperlinkUrl})`;
         index += hyperlinkMatch[0].length;
+        count += `(${hyperlinkUrl.length})`.length
         skipCountIncrement = true;
       }
 
@@ -118,7 +119,7 @@ const truncate = (text, limit, ellipsis) => {
 
   let outputText = truncateString(text);
 
-  if (ellipsis) {
+  if (ellipsis && count >= limit) {
     outputText += '...';
   }
 
@@ -128,7 +129,7 @@ const truncate = (text, limit, ellipsis) => {
 module.exports = function (text = '', options = {}) {
   const { limit, ellipsis } = options || {}
 
- if (isNaN(parseInt(limit, 10)) || text.length < limit) {
+ if (isNaN(parseInt(limit, 10)) || text.length <= limit) {
     return text;
   }
 
