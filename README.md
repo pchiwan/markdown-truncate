@@ -1,5 +1,7 @@
 # Markdown Truncate
 
+[![npm version](https://badge.fury.io/js/markdown-truncate.svg)](https://badge.fury.io/js/markdown-truncate)
+
 A zero-dependency, vanilla JavaScript utility to truncate markdown text.
 
 It's like `substring` but with superpowers, since it respects your input text'ss markdown emphasis markers.
