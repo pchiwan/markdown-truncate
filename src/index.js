@@ -118,7 +118,7 @@ const truncate = (text, limit, ellipsis) => {
 
   let outputText = truncateString(text);
 
-  if (ellipsis) {
+  if (ellipsis && outputText.length < text.length) {
     outputText += '...';
   }
 
@@ -128,7 +128,7 @@ const truncate = (text, limit, ellipsis) => {
 module.exports = function (text = '', options = {}) {
   const { limit, ellipsis } = options || {}
 
- if (isNaN(parseInt(limit, 10)) || text.length < limit) {
+ if (isNaN(parseInt(limit, 10)) || text.length <= limit) {
     return text;
   }
 
