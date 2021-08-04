@@ -50,4 +50,4 @@ truncateMarkdown('markdown *is* __properly__ truncated', {
 
 ## Demo
 
-Check out the live demo [here](https://vkv5b.csb.app/).
+Check out the live demo [here](https://ye770.csb.app/).
