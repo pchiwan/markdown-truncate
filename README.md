@@ -4,7 +4,7 @@
 
 A zero-dependency, vanilla JavaScript utility to truncate markdown text.
 
-It's like `substring` but with superpowers, since it respects your input text'ss markdown emphasis markers.
+It's like `substring` but with superpowers, since it respects your input text's markdown emphasis markers.
 
 Check the [demo](#demo)
 
