@@ -30,18 +30,23 @@ describe('truncateMarkdown test suite', () => {
     ],
     ['markdown *is* __properly__ truncated', 'markdown *is* __pro__', { limit: 15 }],
     [
+      'bold strings *next* *to* *each other*',
+      'bold strings *next* *to* *each*...',
+      { limit: 25, ellipsis: true },
+    ],
+    [
       'this is _another **example**_ of markdown truncation',
       'this is _another **exam**_...',
       { limit: 20, ellipsis: true },
     ],
     [
       '_underscores_wrapped_in_italics_ are truncated correctly',
-      '_underscores_wrapped_in_it_...',
+      '_underscores_wrapped_in_itali...',
       { limit: 25, ellipsis: true },
     ],
     [
       '**asterisks*wrapped*in*bold** are truncated correctly',
-      '**asterisks*wrapped*in*b**...',
+      '**asterisks*wrapped*in*b...',
       { limit: 20, ellipsis: true },
     ],
     [
