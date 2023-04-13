@@ -35,14 +35,14 @@ describe('truncateMarkdown test suite', () => {
       { limit: 20, ellipsis: true },
     ],
     [
-      '_underscores_wrapped_in_italics_ are truncated correctly',
-      '_underscores_wrapped_in_it_...',
-      { limit: 25, ellipsis: true },
+      'underscores must _be\\_wrapped\\_in\\_italics_ to be truncated correctly',
+      'underscores must _be\\_wrapped\\_in\\_ita_...',
+      { limit: 34, ellipsis: true },
     ],
     [
-      '**asterisks*wrapped*in*bold** are truncated correctly',
-      '**asterisks*wrapped*in*b**...',
-      { limit: 20, ellipsis: true },
+      'asterisks must **be\\*wrapped\\*in\\*bold** to be truncated correctly',
+      'asterisks must **be\\*wrapped\\*in\\*b**...',
+      { limit: 30, ellipsis: true },
     ],
     [
       'truncation trims **trailing     spaces**',
@@ -69,6 +69,11 @@ describe('truncateMarkdown test suite', () => {
       '_[**italics wrapping links with bold text**](https://google.com)_ are also truncated',
       '_[**italics wrapping lin**](https://google.com)_',
       { limit: 20 },
+    ],
+    [
+      'Enter some *markdown text* **here**, change the **character _limit_**, and check that the text is __properly__ truncated',
+      'Enter some *markdown text* **here**, change the **character _lim_**',
+      { limit: 55 }
     ],
   ])('%s is truncated correctly', (input, expected, options) => {
     const output = truncateMarkdown(input, options);
