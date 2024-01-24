@@ -26,10 +26,10 @@ const ASTERISK_ITALIC_PLACEHOLDER_REGEXP = /ASTERISKITALICPLACEHOLDER/gm;
 const ASTERISK_ITALIC_REGEXP = /(\*)(.*?)(\*)/g;
 
 const TRIPLE_BACKTICKS_PLACEHOLDER_REGEXP = /TRIPLEBACKTICKSPLACEHOLDER/gm;
-const TRIPLE_BACKTICKS_REGEXP = /(```)(.*?)(```)/g;
+const TRIPLE_BACKTICKS_REGEXP = /(```)(.*?)(```)/gs;
 
 const BACKTICK_PLACEHOLDER_REGEXP = /BACKTICKPLACEHOLDER/gm;
-const BACKTICK_REGEXP = /(`)(.*?)(`)/g;
+const BACKTICK_REGEXP = /(`)(.*?)(`)/gs;
 
 const HYPERLINK = /^\[([^[]+)\]\(([^)]+)\)/;
 
@@ -55,7 +55,7 @@ const replaceFormatMarkersWithPlaceholders = text =>
     )
     .replace(
       TRIPLE_BACKTICKS_REGEXP,
-      `${TRIPLE_BACKTICKS_PLACEHOLDER_REGEXP.source}$2${TRIPLE_BACKTICKS.source}`
+      `${TRIPLE_BACKTICKS_PLACEHOLDER_REGEXP.source}$2${TRIPLE_BACKTICKS_PLACEHOLDER_REGEXP.source}`
     )
     .replace(
       BACKTICK_REGEXP,

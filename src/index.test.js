@@ -85,6 +85,15 @@ describe('truncateMarkdown test suite', () => {
       'add some triple-backticks code ```const foo = "b```',
       { limit: 45 }
     ],
+    [
+      `handles multiline 
+triple-backticks code \`\`\`const foo
+= "bar\`\`\`
+      `,
+      `handles multiline 
+triple-backticks code \`\`\`const f\`\`\``,
+      { limit: 48 }
+    ]
   ])('%s is truncated correctly', (input, expected, options) => {
     const output = truncateMarkdown(input, options);
     expect(output).toEqual(expected);
